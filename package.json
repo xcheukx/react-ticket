@@ -1,0 +1,26 @@
+{
+  "name": "react-ticket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcheukx/react-ticket.git"
+  },
+  "keywords": [
+    "ticktet",
+    "react"
+  ],
+  "author": "cheuk <charcho@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcheukx/react-ticket/issues"
+  },
+  "homepage": "https://github.com/xcheukx/react-ticket#readme",
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
+}
