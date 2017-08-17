@@ -65,7 +65,7 @@ module.exports = {
       require.resolve('react-dev-utils/webpackHotDevClient'),
       require.resolve('./polyfills'),
       require.resolve('react-error-overlay'),
-      paths.appSrc + "/admin.js",
+      paths.appSrc + "/admin/index.js",
     ]
   },//],
   output: {
