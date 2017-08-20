@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TopBar s_title={Config.websiteName} />
+        <TopBar s_title={Config.websiteName} b_left={true} />
       </div>
     );
   }

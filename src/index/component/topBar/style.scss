@@ -2,26 +2,38 @@
 * @Author: Cheuk
 * @Date:   2017-08-20 21:51:19
 * @Last Modified by:   Cheuk
-* @Last Modified time: 2017-08-20 22:55:31
+* @Last Modified time: 2017-08-20 23:16:37
 */
 @import './../../../lib/sass/global';
 
 .topBar{
+	background:#fff;
+	@extend .display-flex;
+	@extend .flex-between;
+	@extend .flex-vc;
 	.topTitle{
 		font-size: pxToRem(14px);
 		font-weight: 400;
 		line-height: pxToRem(44px);
-		position: absolute;
+		// position: absolute;
 		padding: 0;
 		text-align: center;
 		white-space: nowrap;
 		color: #000;
-		right: pxToRem(40px);
-		left: pxToRem(40px);
-		display: inline-block;
+		// right: pxToRem(40px);
+		// left: pxToRem(40px);
+		// display: inline-block;
 		width: auto;
 		margin: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		position: relative;
+		z-index: 1;
+		box-shadow: 0 0 5px rgba(0,0,0,0.5);
+		width:100%;
+	}
+	.leftBtn{
+		height:pxToRem(44px);
+		width:pxToRem(44px);
 	}
 }

@@ -2,7 +2,7 @@
 * @Author: Cheuk
 * @Date:   2017-08-20 21:51:30
 * @Last Modified by:   Cheuk
-* @Last Modified time: 2017-08-20 22:46:33
+* @Last Modified time: 2017-08-20 23:15:41
 */
 'use strict';
 import React, { Component } from 'react';
@@ -13,7 +13,7 @@ class LeftBtn extends React.Component{
 	}
 	render(){
 		return (
-			<div>leftBtn</div>
+			<div className='leftBtn'>leftBtn</div>
 		)
 	};
 }
@@ -23,7 +23,7 @@ class RightBtn extends React.Component{
 	}
 	render(){
 		return (
-			<div>rightBtn</div>
+			<div className="rightBtn">rightBtn</div>
 		);
 	};
 }
