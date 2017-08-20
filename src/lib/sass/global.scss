@@ -1,0 +1,48 @@
+//主色调
+$theme-Color: #F6145B;
+
+//设计稿尺寸(5s——>32px)
+$baseSize:      32px !default;
+// px转rem
+@function pxToRem($px) {
+  @return $px / $baseSize * 1rem;
+}
+//flex兼容
+.display-flex{
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+}
+
+//flex-1
+.flex-1{
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-flex: 1;
+}
+//两端对齐
+.flex-between{
+	-webkit-box-pack: justify;
+	justify-content:space-between;
+}
+//竖直居中
+.flex-vc{
+    box-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+//垂直排列
+.flex-dv{
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+	flex-direction: column;
+    -webkit-flex-direction: column;
+}
+//换行
+.flex-wrap {
+    -webkit-box-lines: multiple;
+    box-lines: multiple;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
