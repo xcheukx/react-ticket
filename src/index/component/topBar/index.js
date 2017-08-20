@@ -2,51 +2,54 @@
 * @Author: Cheuk
 * @Date:   2017-08-20 21:51:30
 * @Last Modified by:   Cheuk
-* @Last Modified time: 2017-08-20 22:16:34
+* @Last Modified time: 2017-08-20 22:46:33
 */
 'use strict';
 import React, { Component } from 'react';
+import './style.scss';
 
 class LeftBtn extends React.Component{
 	static propTypes = {
-		b_show:React.PropTypes.bool
 	}
 	render(){
-		let leftBtn = '';
-		if(this.props.b_show){
-			leftBtn = `<div>leftBtn</div>`;
-		}
 		return (
-			<div>{leftBtn}</div>
+			<div>leftBtn</div>
 		)
 	};
 }
 
 class RightBtn extends React.Component{
 	static propTypes = {
-		b_show:React.PropTypes.bool
 	}
 	render(){
-		let rightBtn = '';
-		if(this.props.b_show){
-			rightBtn = `<div>rightBtn</div>`;
-		}
 		return (
-			<div>{rightBtn}</div>
+			<div>rightBtn</div>
 		);
 	};
 }
 
 class TopBar extends React.Component{
 	static propTypes = {
-		s_title:React.PropTypes.string.isRequired
+		s_title:React.PropTypes.string.isRequired,
+		b_left:React.PropTypes.bool,
 	}
 	render(){
+		let leftBtn,rightBtn;
+		if(this.props.b_left){
+			leftBtn = (
+				<LeftBtn />
+			)
+		}
+		if(this.props.b_right){
+			rightBtn = (
+				<RightBtn />
+			)
+		}
 		return (
 			<div className="topBar">
-				<LeftBtn b_show={true} />
-				{this.props.s_title}
-				<RightBtn />
+				{leftBtn}
+				<h1 className="topTitle">{this.props.s_title}</h1>
+				{rightBtn}
 			</div>
 		);
 	}

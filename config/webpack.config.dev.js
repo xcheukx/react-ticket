@@ -227,6 +227,8 @@ module.exports = {
               /\.html$/, 
               /\.json$/,
               /\.less$/,
+              // 添加sass
+              /\.scss$/,
             ],
             loader: require.resolve('file-loader'),
             options: {
@@ -268,6 +270,11 @@ module.exports = {
             },
           },
         ],
+      },
+      // 添加sass
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

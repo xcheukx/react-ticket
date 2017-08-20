@@ -2,7 +2,7 @@
  * @Author: {daihanqiao}
  * @Date:   2015-12-25 16:40:55
  * @Last Modified by:   Cheuk
- * @Last Modified time: 2017-08-20 21:46:11
+ * @Last Modified time: 2017-08-20 22:58:12
  * storage操作
  */
 
@@ -35,4 +35,4 @@ class Storage {
 		window.sessionStorage.clear();
 	}
 }
-module.exports = Storage;
+export default Storage;

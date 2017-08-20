@@ -2,5 +2,26 @@
 * @Author: Cheuk
 * @Date:   2017-08-20 21:51:19
 * @Last Modified by:   Cheuk
-* @Last Modified time: 2017-08-20 21:51:19
+* @Last Modified time: 2017-08-20 22:55:31
 */
+@import './../../../lib/sass/global';
+
+.topBar{
+	.topTitle{
+		font-size: pxToRem(14px);
+		font-weight: 400;
+		line-height: pxToRem(44px);
+		position: absolute;
+		padding: 0;
+		text-align: center;
+		white-space: nowrap;
+		color: #000;
+		right: pxToRem(40px);
+		left: pxToRem(40px);
+		display: inline-block;
+		width: auto;
+		margin: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

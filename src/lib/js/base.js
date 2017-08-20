@@ -2,14 +2,15 @@
 * @Author: Cheuk
 * @Date:   2017-08-20 21:25:39
 * @Last Modified by:   Cheuk
-* @Last Modified time: 2017-08-20 21:43:02
+* @Last Modified time: 2017-08-20 22:59:28
 */
 
 "use strict";
-import Storage from 'storage';
+import Storage from './storage';
 let storage = new Storage();
-require('flexible');
+require('./flexible');
 
+let _eventList = null;
 //枚举：安卓系统
 const ENUM_SYS_ANDROID = 0;
 //枚举：IOS系统
@@ -198,4 +199,4 @@ const Base = {
         document.getElementsByTagName("head")[0].appendChild(JSONP);
     },
 }
-module.exports = Base;
+export default Base;
