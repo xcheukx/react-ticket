@@ -1,13 +1,16 @@
 /*
 * @Author: 卓圳宝
 * @Date:   2017-08-23 14:53:15
-* @Last Modified by:   卓圳宝
-* @Last Modified time: 2017-08-23 17:43:30
+* @Last Modified by:   Cheuk
+* @Last Modified time: 2017-08-23 22:40:26
 */
 
 'use strict';
 import React, { Component } from 'react';
 import ReactCarousel from 'nuka-carousel';
+//原有createReactClass的写法
+import createReactClass from 'create-react-class';
+import classNames from 'classnames';
 import omit from 'omit.js';
 
 export default class Carousel extends React.Component{
@@ -43,10 +46,12 @@ export default class Carousel extends React.Component{
       className, prefixCls, dotStyle, dotActiveStyle, infinite,
       selectedIndex, beforeChange, dots, vertical,
     } = this.props;
-    //omit(object,keys) 把oject里key等于keys的排除掉
+    //omit(object,keys) 把this.props里key等于下面的给排除掉
     const restProps = omit(this.props, ['infinite', 'selectedIndex', 'beforeChange', 'afterChange', 'dots']);
-    console.log('props:'+this.props);
-    console.log('restPros:'+restPros);
+    console.log('props:');
+    console.log(this.props);
+    console.log('restPros:');
+    console.log(restProps);
     const newProps = {
       ...restProps,
       wrapAround: infinite,
@@ -54,7 +59,7 @@ export default class Carousel extends React.Component{
       beforeSlide: beforeChange,
     };
 
-    let Decorators: any[] = [];
+    let Decorators = [];
     const current = this.state.selectedIndex;
     if (dots) {
       Decorators = [{
@@ -67,8 +72,8 @@ export default class Carousel extends React.Component{
             }
             const dotDom = arr.map(function(index) {
               const dotCls = classNames({
-                `${prefixCls}-wrap-dot`: true,
-                `${prefixCls}-wrap-dot-active`: index === current,
+                [`${prefixCls}-wrap-dot`]: true,
+                [`${prefixCls}-wrap-dot-active`]: index === current,
               });
               const _dotStyle = index === current ? dotActiveStyle : dotStyle;
               return (
@@ -86,12 +91,13 @@ export default class Carousel extends React.Component{
         }),
         position: 'BottomCenter',
       }];
+      // console.log(Decorators);
     }
 
     const wrapCls = classNames({
       className: className,
       prefixCls: true,
-      `${prefixCls}-vertical`: vertical,
+      [`${prefixCls}-vertical`]: vertical,
     });
 
     return (
