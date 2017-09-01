@@ -5,15 +5,18 @@ import Config from './../../../lib/js/config';
 import './../../../lib/js/config';
 
 class App extends Component {
-  state = {
-    data: ['', '', ''],
-    initialHeight: 200,
+  constructor(props) {
+    super(props);
+    this.state = {
+      slider: ['', '', ''],
+      initialHeight: 200,
+    };
   }
   componentDidMount() {
-    // simulate img loading
+    // 模拟img加载中
     setTimeout(() => {
       this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+        slider: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
       });
     }, 100);
   }
@@ -31,13 +34,14 @@ class App extends Component {
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           afterChange={index => console.log('slide to', index)}
         >
-          {this.state.data.map(ii => (
+          {this.state.slider.map(ii => (
             <a href="http://www.baidu.com" key={ii} style={hProp}>
               <img
                 src={`https://zos.alipayobjects.com/rmsportal/${ii || 'QcWDkUhvYIVEcvtosxMF'}.png`}
                 alt="icon"
                 onLoad={() => {
                   // fire window resize event to change height
+                  // 触发window的resize事件去改变高度 （其他知识：IE-use 'window.fireEvent()' ）
                   window.dispatchEvent(new Event('resize'));
                   this.setState({
                     initialHeight: null,
@@ -47,6 +51,20 @@ class App extends Component {
             </a>
           ))}
         </Carousel>
+        <div className="con">
+
+        </div>
+        <div className="list">
+			<div className="item">
+				<div class="cover"><img src="" alt="" /></div>
+			<div class="content">
+			div class="title">测试</div>
+			<div class="info">是多少</div>
+			<div class="btn">选座购票</div>
+            </div>
+            <div class="rank">9.0</div>
+          </div>
+        </div>
       </div>
     );
   }

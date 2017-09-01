@@ -1,8 +1,8 @@
 /*
 * @Author: 卓圳宝
 * @Date:   2017-08-23 14:53:15
-* @Last Modified by:   Cheuk
-* @Last Modified time: 2017-08-23 22:40:26
+* @Last Modified by:   卓圳宝
+* @Last Modified time: 2017-08-24 16:29:24
 */
 
 'use strict';
@@ -12,6 +12,33 @@ import ReactCarousel from 'nuka-carousel';
 import createReactClass from 'create-react-class';
 import classNames from 'classnames';
 import omit from 'omit.js';
+
+class Decorator extends React.Component{
+    render() {
+      const { slideCount, slidesToScroll } = this.props;
+      const arr: number[] = [];
+      for (let i = 0; i < slideCount; i += slidesToScroll) {
+        arr.push(i);
+      }
+      const dotDom = arr.map(function(index) {
+        const dotCls = classNames({
+          [`${prefixCls}-wrap-dot`]: true,
+          [`${prefixCls}-wrap-dot-active`]: index === current,
+        });
+        const _dotStyle = index === current ? dotActiveStyle : dotStyle;
+        return (
+          <div className={dotCls} key={index}>
+            <span style={_dotStyle} />
+          </div>
+        );
+      });
+      return (
+        <div className={`${prefixCls}-wrap`}>
+          {dotDom}
+        </div>
+      );
+    }
+}
 
 export default class Carousel extends React.Component{
   static defaultProps = {
